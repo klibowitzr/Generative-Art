@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="perlin_shapes.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title"> &mdash; perlin shapes&mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+    <div id="flexContainer">
+        <div id="sketch"></div>
+        <div id="rhs">
+            <div id="sys_buttons"></div>
+            <div id="sliders">
+                <div id="slider1">
+                    <p id="time_increment">TIME INCREMENT: <span id="time_increment_val"></span></p>
+                </div>
+                <div id="slider2">
+                    <p id="alpha_slider_label">LINE ALPHA: <span id="alpha_slider_value"></span></p>
+                </div>
+            </div>
+            <div id="colorpickers">
+                <div id="solid_color_picker">
+                    <p> SOLID</p>
+                </div>
+                <div id="lerp_color_pickers">
+                    <p>LERP</p>
+                </div>
+                <div id="lerpv2_color_pickers">
+                    <p>LERP v.2</p>
+                </div>
+                <div id="lerpv3_color_pickers">
+                    <p>LERP v.3</p>
+                </div>
+                <div id="background_colorPicker">
+                    <p>BACKGROUND</p>
+                </div>
+            </div>
+            <div id="shapes">
+                <div id="shapes_col1"></div>
+                <div id="shapes_col2"></div>
+            </div>
+        </div>
+    </div>
+    <h2 id="scroll">I know you wanna know</h2>
+    <div class="flex-container2">
+        <div data-aos="fade-right" id="fade-right">
+            <h2 id="work">now you'll know</h2>
+            <p> This one is short and easy (even though it produces some cool looking stuff). Basically, were using Perlin noise to slowly change the coordinates of whatever shape (or curve, or line) you chose, and because we use Perlin noise it
+                moves smoothly (check out the other Perlin noise simulation for some more details). Because we're not clearing the canvas after each frame the shape creates a trail. Then, once you add alpha (transparency) to what's being drawn, you
+                get the cool 3D effect. Pretty simple.</p>
+            <p> I will add a few notes about the different linear interpolation settings for the colors though...<br>
+                In LERP the color value is calculated as a function of x, and x increases by whatever is chosen for increment. So, it goes from color 1 to color 2 until it reaches a value of 1, and then it goes from color 2 to color 1 until it
+                reaches a value of 2, and then it resets. Equal amounts of both color 1 and color 2 will appear. <br>
+                In LERP v.2 we are using our Perlin noise offset to calculate the color, so the majority of the colors calculated will be in the middle of the two chosen colors and strictly color 1 or color 2 showing up is somewhat unlikely, but it
+                may happen. <br>
+                In LERP v.3 each shape is being drawn in a color that is a randomly chosen linear interpolation between color 1 and color 2. This can lead to a stripe effect.
+            </p>
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+<script src="perlin_shapes.js"></script>
+
+</html>

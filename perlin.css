@@ -1,0 +1,382 @@
+* {
+    font-family: Helvetica, Arial, upgrade, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wide_color_picker {
+    width: 150px;
+    height: 25px;
+}
+
+.narrow_color_picker {
+    width: 75px;
+    height: 25px;
+}
+
+h1 {
+    color: white;
+    font-size: 5.7vw;
+    line-height: 107px;
+    padding-left: 30px;
+    padding-right: 30px;
+    writing-mode: sideways-lr;
+    -webkit-writing-mode: vertical-lr;
+    position: fixed;
+    left: -20px;
+    top: 20px;
+    margin: 0px;
+}
+
+#sketch {
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+#flexContainer {
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    margin-top: 80px;
+    margin-right: 0px;
+}
+
+#inputs {
+    margin-left: 30px;
+    overflow-y: auto;
+    position: relative;
+    height: 66vh;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.slider::-moz-range-thumb {
+    width: 7px;
+    height: 40px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+}
+
+#slider {
+    margin-top: 0px;
+}
+
+button {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    margin-top: 20px;
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+button:hover {
+    font-weight: lighter;
+    font-style: oblique;
+}
+
+.i {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#presets {
+    margin-top: 20px;
+}
+
+#return a {
+    display: inline;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#scroll, #work {
+    font-size: 3vw;
+}
+
+#scroll {
+    margin-left: 130px;
+}
+
+.flex-container2 {
+    margin-left: 130px;
+    margin-top: 40px;
+    text-align: justify;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#work {
+    margin-top: 100px;
+    padding-top: 80px;
+    margin-left: 130px;
+}
+
+#fade-right {
+    max-width: 50%;
+}
+
+#fade-right p {
+    font-weight: normal;
+}
+
+img {
+    position: relative;
+    object-fit: none;
+    transform: scale(.7, .7);
+    top: -15%;
+}
+
+#sidenote, #note {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#note {
+    margin-left: 30px;
+}
+
+#color_settings {
+    display: flex;
+    flex-direction: column;
+}
+
+#solidx2, #lerp, #lerpv2 {
+    display: flex;
+}
+
+#solidx2 span {
+    margin-right: 76px;
+}
+
+#lerp span {
+    margin-right: 112px;
+}
+
+#lerpv2 span {
+    margin-right: 80px;
+}
+
+input[type="color"] {
+    vertical-align: text-bottom;
+    float: right;
+}
+
+#solid, #solidx2, #sand, #lerp, #lerpv2, #background_p {
+    margin-bottom: 20px;
+}
+
+#solid {
+    margin-top: 20px;
+}
+
+#sys_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    margin-top: 0px;
+    justify-content: center;
+}
+
+#sys_buttons button {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+@media (hover:none) {
+    p, label, span {
+        font-size: 48px;
+    }
+
+    #rhs, #sys_buttons {
+        width: 100vw;
+    }
+
+    .button, #sys_buttons {
+        font-size: 48px;
+        width: 100%;
+        margin: 50px;
+        margin-left: 0px;
+    }
+
+    #sys_buttons {
+        margin-left: 30px;
+        margin-bottom: 30px;
+        margin-top: -60px;
+    }
+
+    #sys_buttons button {
+        margin-top: 50px;
+    }
+
+    #flexContainer, .flex-container2 {
+        margin-left: 0px;
+        width: 100vw;
+        display: block;
+    }
+
+    #fade-right {
+        max-width: 100vw;
+        width:100%;
+    }
+
+    #fade-right p {
+        max-width: 100vw;
+        margin-left: 5%;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 8vmin;
+        padding-left: 0px;
+        padding-right: 0px;
+        writing-mode: horizontal-tb;
+        position: relative;
+        left: 0;
+        top: 10px;
+        margin: 0px;
+        margin-top: 40px;
+    }
+
+    #scroll, #work {
+        font-size: 8vmin;
+        margin-bottom: 50px;
+        margin-left: 5%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        transform: scale(1.25, 1.25);
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+        margin-top: -12px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-ms-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    input[type="range"] {
+        width: 95%;
+        margin-bottom: 50px;
+    }
+
+    #return a {
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        font-size: 22px;
+        padding-bottom: 50px;
+    }
+
+    #inputs {
+        border: none;
+    }
+
+    input[type="color"] {
+        width: 50%;
+        height: 100px;
+        display: block;
+        margin-bottom: 50px;
+        float: left;
+    }
+
+    #solid {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    #solid1, #lerp, #lerpv2, #solidx2, #sand, #background_p {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #note {
+        display: none;
+    }
+
+    #inputs {
+        height: auto;
+        overflow-y: visible;
+    }
+    #sidenote {
+        font-size: 20px;
+    }
+
+}

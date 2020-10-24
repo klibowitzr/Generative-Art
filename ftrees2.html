@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="ftree.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="title">&mdash; fractal trees &mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+    <div id="flexContainer">
+        <div id="sketch"></div>
+        <div id="innerflex">
+            <div id="sliders_container">
+                <div id="slider1">
+                    <p id="angle_label"> ANGLE: <span id="angle_s_val"></span></p>
+                </div>
+
+                <div id="slider2">
+                    <p id="branch_prob_label"> BRANCH PROBABILITY: <span id="branch_prob_s_val"></span></p>
+                </div>
+
+                <div id="slider3">
+                    <p id="level_label"> LEVELS OF RECURSION: <span id="level_s_val"></span></p>
+                </div>
+
+                <div id="slider4">
+                    <p id="scale_label"> SCALE: <span id="scale_s_value"></span></p>
+                </div>
+
+                <div id="slider5">
+                    <p id="growth_label"> GROWTH FACTOR: <span id="growth_s_val"></span></p>
+                </div>
+
+                <div id="slider6">
+                    <p id="a_var_label"> ANGLE VARIANCE: <span id="a_s_value"></span></p>
+                </div>
+
+                <div id="slider7">
+                    <p id="flower_prob_label"> FLOWER PROBABILITY: <span id="flower_s_value"></span></p>
+                </div>
+            </div>
+            <div id="settings_container">
+
+                <div id="buttons_div"></div>
+                <div id="buttons_div2"></div>
+                <div class="colorpickers" id="colorpickers_container">
+                    <span class="smol"> (WARNING: some random trees and colors <br> are better than others...
+                        <br>if you're picky, choose your own, I don't care)</span><br><br>
+                </div>
+                <div class="radio_buttons">
+                    <div id="canvas_radios"><span id="canvas_sel_lbl">CANVAS</span></div>
+                    <div id="line_radios"><span id="line_sel_lbl">STROKE</span></div>
+                </div>
+            </div>
+        </div>
+        <h2 id="scroll"> interested in how I work?</h2>
+    </div>
+    <div class="flex-container2">
+
+
+        <div data-aos="fade-right" id="left">
+            <h2 id="work"> ok. fine, I'll tell you</h2>
+            <p> Fractal trees are inheriently simple. You draw a beginning line (in our case the "trunk") and every time you draw a line, you split that line into two lines with a decreased length, each heading off in their own direction. And that
+                line draws two lines. And then, that line (you'll never guess this...) draws two lines. Each time we branch, we're adding another level of recursion to our program. In fact, if we didn't tell it (the program) when to stop, it would
+                keep going on forever, minding its own business, just splitting each branch until your computer crashes (at higher levels of recursion you'll see a slow down in performance, I promise it's working hard). This kind of tree, where it
+                automatically branches at the same direction each time with consistent branch lengths, is what is simulated in regular mode.</p>
+            <p>Fractal trees become much, much cooler once you throw in a ton of variables, like differing branch lengths, branching probability, angle variance, and tons of other things (personal favorite is flowers). When all of these additional
+                variables are added, you see much more natural looking structures.</p>
+            <p>Because I'm truly a wonderful human being, I added the ability to add flowers (AND EVEN LET YOU CHOOSE THE COLORS), so I hope you can manage to create something decent looking (please, make my pain worth it). </p>
+            <p>One additional thing to note is that even if you keep the same variable settings and draw a new tree (in creative mode), you'll still get something different. No, this isn't a bug, the program is fine. When generating the tree there
+                are random variables involved (I <em>literally</em> call random() in the program, I don't make the rules, sorry.)</p>
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+        <img  src="ftree_info-01.png">
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+<script src="ftree.js"></script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="circles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="title">&mdash; circle packing &mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+
+    <div class="flex-container">
+        <div id="sketch"></div>
+        <div id="sysconfig">
+            <div class="slidercontainer" id="sliders">
+                <p id="CirclesLabel"> NUMBER OF CIRCLES: <span id="slider_value"></span></p>
+            </div>
+            <div id="buttons_no_color_picker" class="buttons"></div>
+            <div id="gradient_color_picker"><label id="gradientlabel">GRADIENT</label></div>
+            <div id="lerp_color_div"><label>LERP BETWEEN</label></div>
+            <div id="outline_buttons"></div>
+        </div>
+    </div>
+
+    <h2 id="scroll"> see what's goin' on</h2>
+    <div class="flex-container2">
+        <div data-aos="fade-right" id="aos-right">
+            <h2 id="work"> here's how I work</h2>
+            <p> Imagine you have an array (basically just a collection of objects, in this case circles), and based on the value you deemed appropirate for the number of circles you wanted, we loop through a process of drawing teeeny tiiiiinnnyyy
+                circles (like seriously small, about 2 pixels) at random spots around the canvas. Then, each time we draw a circle, we check to see if its colliding with any other circles that we've already drawn. If it is, we get rid of it and cut
+                our losses. If it's not coliding, we grow its radius one pixel at a time until it does collide. And bam, thats our circle. We then store that circle in our array just for safe keeping. </p>
+            <p> Now, if you really care and want a more mathy explanation on how we check for collisions, I'll tell you. When were checking for the current circle, we must check it against every single circle we've previously drawn. From the
+                Pythagorean theorem we know that the hypotenuse is equal to the square root of both of our other sides squared (sorry I had to write that out with words, its unfortunate). In this case, our hypotenuse is the total of our two radii
+                (from our current circle and the one were checking against). Then, our two sides are the differences between our other circle's x position and the current circle's x position, and our old circle's y position and our current circle's y
+                position. If our hypotenuse is greater than the square root of those two sides, we know we have a collision. </p>
+            <p> To really get the packing effect we need to make sure that our circles stay within the canvas. So, what we do is check if the circle's x position plus its radius is greater than the far right
+                edge of our canvas, if it is, collision. If the circle's x position minus the radius is less than 0, we know its gone off the left end of our canvas, so that's also a collision. You can imagine how this would work for the bottom and
+                top of the canvas. </p>
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+        <img src="circles_infographic.png">
+    </div>
+    <script src="circles.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

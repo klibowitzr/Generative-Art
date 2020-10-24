@@ -1,0 +1,308 @@
+* {
+    font-family: Helvetica, Arial, upgrade, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    font-size: 9vmin;
+    line-height: 107px;
+    padding-left: 30px;
+    padding-right: 30px;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: sideways-lr;
+    position: fixed;
+    left: -20px;
+    top: 20px;
+    margin: 0px;
+}
+
+#scroll, #work {
+    font-size: 3vw;
+}
+
+#sketch {
+    padding-left: 30px;
+}
+
+#gradient_color_picker label {
+    padding-right: 72px;
+}
+
+#gradient_color_picker {
+    padding-top: 20px;
+}
+
+#lerp_color_div {
+    padding-top: 20px;
+}
+
+#lerp_color_div label {
+    padding-right: 18px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#return a {
+    display: inline;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.flex-container {
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 130px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: justify;
+    height: 100vh;
+    width: 100%;
+    margin-right: 0px;
+}
+
+#aos-right {
+    width: 45%;
+}
+
+#image {
+    display: flex;
+    margin-right: 0px width:100%;
+}
+
+img {
+    display: inline-block;
+    margin-left: 70px;
+    object-fit: none;
+    vertical-align: center;
+    margin-top: 150px;
+    padding-right:30px;
+    padding-bottom: 30px;
+}
+
+#work {
+    padding-top: 80px;
+}
+
+#scroll {
+    margin-top: 80px;
+    margin-left: 130px;
+}
+
+.flex-container2 p {
+    font-weight: normal;
+}
+
+#sidenote {
+    font-size: 12px;
+}
+
+#sysconfig {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+#lerp_color_div .colorpickers {
+    vertical-align: text-bottom;
+    width: 100px;
+    height: 25px;
+}
+
+#gradient_color_picker .colorpickers {
+    vertical-align: text-bottom;
+    width: 200px;
+    height: 25px;
+}
+
+button {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    margin-top: 20px;
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+button:hover:enabled {
+    font-weight: lighter;
+    font-style: oblique;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.slider::-moz-range-thumb {
+    width: 7px;
+    height: 40px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+}
+
+@media (hover:none) {
+    html {
+        scroll-snap-type: none;
+    }
+
+    p, label, span {
+        font-size: 48px;
+    }
+
+    button {
+        font-size: 48px;
+        width: 100%;
+        margin: 50px;
+        margin-left: 0px;
+    }
+
+    .flex-container, .flex-container2 {
+        margin-left: 0px;
+        width: 95vw;
+    }
+
+    #gradient_color_picker .colorpickers {
+        width: 50%;
+        height: 100px;
+    }
+
+    #lerp_color_div .colorpickers {
+        width: 50%;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 8vmin;
+        padding-left: 0px;
+        padding-right: 0px;
+        writing-mode: horizontal-tb;
+        position: relative;
+        left: 0;
+        top: 10px;
+        margin: 0px;
+    }
+
+    #scroll, #work {
+        font-size: 8vmin;
+        margin-bottom: 50px;
+        margin-left: 5%;
+    }
+
+    #aos-right {
+        width: 100%;
+    }
+
+    img {
+        width: 100vw;
+        height: auto;
+    }
+
+    .flex-container2 p {
+        width: 95%;
+        max-width: 95%;
+        margin-left: 5%;
+    }
+
+    #sysconfig {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #gradient_color_picker input, #lerp_color_div input {
+        display: block;
+        margin-top: 30px;
+    }
+
+    #lerp_color_div label {
+        width: 100%;
+        display: block;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+        margin-top: -12px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-ms-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    #sidenote {
+        font-size: 20px;
+    }
+
+    #return a {
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        font-size: 22px;
+        padding-bottom: 50px;
+    }
+}

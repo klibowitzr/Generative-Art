@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="waves.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="title">&mdash; wave generator &mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+    <div id="flexContainer">
+        <div id="sketch"></div>
+        <div id="innerflex">
+            <div id="slider_and_sys_ctrls">
+                <div class="slidercontainer">
+                    <div id="step_slider">
+                        <p id="stepLabel"> STEP: <span id="step_value"></span></p>
+                    </div>
+                    <div id="line_slider">
+                        <p id="linesLabel"> NUMBER OF LINES: <span id="line_value"></span></p>
+                    </div>
+                </div>
+                <div id="toggle_cnvs_btn"></div>
+                <div id="distro_selection_btns"></div>
+
+            </div>
+            <div id="color_ctrls">
+                <div id="clr_btns"></div>
+                <div id="gradient_picker">
+                    <label>GRADIENT</label>
+                    <div id="picker1"></div>
+                    <div id="scatter1"></div>
+                </div>
+
+                <div id="lerp_picker">
+                    <label>LERP BETWEEN</label>
+                    <div id="picker2"></div>
+                    <div id="picker3"></div>
+                    <div id="scatter2"></div>
+                </div>
+                <div id="line_clr_ctrl"></div>
+            </div>
+        </div>
+
+    </div>
+    <h2 id="scroll"> I know you're curious</h2>
+    <div class="flex-container2">
+        <div data-aos="fade-right" id="fade_right">
+            <h2 id="work"> here's the secret</h2>
+            <p>You have an array (collection of objects) that is filled with the number of lines you deemed appropirate above. These lines are created out of a collection of points that are spaced a certain distance apart (what you chose for step).
+                We connect those points to create a line.
+            </p>
+            <p> But the thing is, that's not very fun or interesting. So instead, we go through the points and mess with them a little bit, moving them vertically by some random amount. We are focusing the most variance on the area that you chose
+                (unless its even, then there isn't one area that's weighted over the others, or whoville, which was a happy accident that somehow reminded me of Dr. Seuss). There is a lot of random variables being called, which is why you get a
+                different piece everytime. But (and this is important) you have to use Bezier curves so that these lines are smooth. If you don't, you'd get some ugly looking jagged lines.</p>
+
+            <p> In order to add colors, we have to close this curve to make it a shape, so we do that by drawing along the ends of the canvas. Basically, each section is a boxy shape with a weird top, and we draw each new shape on top the others,
+                giving the wavy mountain effect. </p>
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+        <img  src="wave_infographic-01.png">
+    </div>
+
+</body>
+<script src="waves.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

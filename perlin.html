@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="perlin.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="title"> &mdash; perlin noise &mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+    <div id="flexContainer">
+        <div id="sketch"></div>
+        <div id="rhs">
+            <div id="sys_buttons"></div>
+            <div id="inputs">
+                <div id="sliders">
+                    <div id="slider1">
+                        <p id="num_of_particles">NUMBER OF PARTICLES: <span id="particles_s_val"></span></p>
+                    </div>
+
+                    <div id="slider2">
+                        <p id="noise_slider_label">NOISE DETAIL: <span id="noise_detail_value"></span></p>
+                    </div>
+
+                    <div id="slider3">
+                        <p id="step_slider_label">STEP SIZE: <span id="step_slider_value"></span></p>
+                    </div>
+
+                    <div id="slider4">
+                        <p id="per_inc_label">PERLIN NOISE INCREMENT: <span id="perlin_increment_value"></span></p>
+                    </div>
+
+                    <div id="slider5">
+                        <p id="perlin_mult_lable">PERLIN MULTIPLIER: <span id="perlin_mult_value"></span></p>
+                    </div>
+
+                    <div id="slider6">
+                        <p id="alpha_slider_label">LINE ALPHA: <span id="alpha_value"></span></p>
+                    </div>
+                </div>
+
+                <div id="buttons"></div>
+                <div id="color_settings">
+                    <div id="solid"><span>SOLID</span></div>
+                    <div id="solidx2"><span> SOLID x2 </span>
+                        <div id="solid1"></div>
+                        <div id="solid2"></div>
+                    </div>
+                    <div id="sand"><span>SAND</span></div>
+                    <div id="lerp"><span>LERP</span>
+                        <div id="lerp1"></div>
+                        <div id="lerp2"></div>
+                    </div>
+                    <div id="lerpv2"><span>LERP v.2</span>
+                        <div id="lerpv21"></div>
+                        <div id="lerpv22"></div>
+                    </div>
+                    <div id="background_p"><span>BACKGROUND</span></div>
+                </div>
+            </div>
+
+            <span id="note"> I scroll <span class="i">(for your convienience) </span></span>
+        </div>
+    </div>
+    <h2 id="scroll">pssst...scroll down</h2>
+    <h2 id="work">awww thank you</h2>
+    <div class="flex-container2">
+        <div data-aos="fade-right" id="fade-right">
+            <p> Perlin noise is basically a really, reallllly bad random function (to put it simply). We all love the bell curve -- Perlin noise kind of mimicks that. A good random function would ideally have an even distribution, and Perlin noise
+                does not. It focuses on the middle. We have Ken Pelrin to thank for this wonderful gradient noise (the reason this was invented was because of the movie TRON in a really good attempt to naturalize computer-generated images). tl;dr:
+                Perlin noise is smoother than random as a function of time. </p>
+            <p> So now bringing this back to this simulation (that's why you're here afterall). A 2D array (think like a grid) is made and each cell contains a vector, whose heading is determined by Perlin noise. That means that our little vectors
+                are all going to smoothly transition from one row and column to the next, and over time they'll change directions. For optimization purposes, this array is created once per simulation (every time you change colors, restart the
+                simulation, etc).</p>
+            <p> Now we choose the number of particles we want to follow these vectors, for now we'll use the default of 500. For every single frame that is drawn to the screen we need to update the position of every. single. particle. We do this by
+                getting the particles current position and finding the array cell closest to it, and then we apply this force to our particle to influence its direction. We then update the particles actual position with physics (velocity,
+                acceleration, etc, all that gross stuff) and draw a line connecting our old position with our new. And we do that FOR EVERY SINGLE PARTICLE IN EACH FRAME so if you're choosing a high number of particles be patient, it's working hard.
+            </p>
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+        <div id="image">
+            <img src="perlin_noise_infographic-01.png">
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+<script src="perlin.js"></script>
+<script src="particle.js"></script>
+
+</html>

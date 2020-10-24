@@ -1,0 +1,379 @@
+html {
+    overflow-x: hidden;
+}
+
+* {
+    font-family: Helvetica, Arial, upgrade, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+#scroll {
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+body {
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: white;
+    font-size: 9vmin;
+    line-height: 107px;
+    padding-left: 30px;
+    padding-right: 30px;
+    writing-mode: sideways-lr;
+    -webkit-writing-mode: vertical-lr;
+    position: fixed;
+    left: -20px;
+    top: 20px;
+    margin: 0px;
+}
+
+#sketch {
+    padding-left: 30px;
+}
+
+#flexContainer {
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    margin-top: 80px;
+    margin-right: 0px;
+}
+
+button {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    margin-top: 20px;
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+button:hover {
+    font-weight: lighter;
+    font-style: oblique;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.slider::-moz-range-thumb {
+    width: 7px;
+    height: 40px;
+    background: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+}
+
+#slider_and_sys_ctrls {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.colorpickers {
+    vertical-align: text-bottom;
+}
+
+.smol_button {
+    font-size: 12px;
+    padding: 0px;
+    display: inline;
+    padding-left: 5px;
+}
+
+#color_ctrls {
+    margin-left: 30px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#picker1 [type="color"] {
+    width: 200px;
+    height: 25px;
+}
+
+#picker2 [type="color"], #picker3 [type="color"] {
+    width: 100px;
+    height: 25px;
+}
+
+#gradient_picker, #picker1, #picker2, #picker3 {
+    display: inline-block;
+}
+
+#scatter1, #scatter2 {
+    padding-top: 0px;
+    margin-top: -10px;
+}
+
+label {
+    padding-right: 5px;
+}
+
+#gradient_picker label {
+    padding-right: 60px;
+}
+
+#gradient_picker {
+    margin-bottom: 15px;
+}
+
+#lerp_picker {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#innerflex {
+    display: flex
+}
+
+#line_clr_ctrl {
+    margin-top: 5px;
+}
+
+.flex-container2 {
+    margin-left: 130px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: justify;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#fade_right {
+    width: 50%;
+}
+
+img {
+    transform: scale(.66, .66);
+    vertical-align: middle;
+    margin: 0px;
+    padding: 0px;
+}
+
+#work {
+    margin-top: 100px;
+}
+
+.flex-container2 p {
+    font-weight: normal;
+}
+
+#sidenote {
+    font-size: 12px;
+}
+
+#return a {
+    display: inline;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#scroll, #work {
+    font-size: 3vw;
+}
+
+#scroll {
+    padding-left: 30px;
+}
+
+@media (hover:none) {
+    html {
+        scroll-snap-type: none;
+    }
+
+    p, label, span {
+        font-size: 48px;
+    }
+
+    button {
+        font-size: 48px;
+        width: 100%;
+        margin: 50px;
+        margin-left: 0px;
+    }
+
+    #flexContainer, .flex-container2 {
+        margin-left: 0px;
+        width: 95vw;
+    }
+
+    #slider_and_sys_ctrls {
+        width: 100%;
+    }
+
+    #innerflex {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 8vmin;
+        padding-left: 0px;
+        padding-right: 0px;
+        writing-mode: horizontal-tb;
+        position: relative;
+        left: 0;
+        top: 10px;
+        margin: 0px;
+        margin-top: 40px;
+    }
+
+    #scroll, #work {
+        font-size: 8vmin;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        padding-left: 0px;
+    }
+
+    /* #work {
+        margin-left: 30px;
+    } */
+
+    #fade_right {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    #fade_right p {
+        width: 95%;
+        max-width: 95%;
+        margin-left: 30px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-top: -100px;
+        margin-bottom: 30px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+        margin-top: -12px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-ms-thumb {
+        height: 56px;
+        width: 56px;
+        background: white;
+        cursor: pointer;
+    }
+
+    #step_slider, #line_slider, .slidercontainer {
+        width: 95%;
+    }
+
+    #toggle_cnvs_btn .button {
+        margin-bottom: 0px;
+    }
+
+    .slidercontainer {
+        margin-bottom: 50px;
+    }
+
+    #sidenote {
+        font-size: 20px;
+    }
+
+    #distro_selection_btns {
+        margin-bottom: 0px;
+    }
+
+    #return a {
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        font-size: 22px;
+        padding-bottom: 50px;
+    }
+
+    #lerp_picker button, #gradient_picker button {
+        font-size: 48px;
+    }
+
+    #clr_btns button:first-of-type {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    #gradient_picker, #lerp_picker {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #picker1 {
+        width: 100%;
+        height: 100px;
+    }
+
+    #picker1 [type="color"], #picker2 [type="color"], #picker3 [type="color"] {
+        width: 50%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    #scatter2 button {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+}

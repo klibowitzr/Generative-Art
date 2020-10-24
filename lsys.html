@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="lsys.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="title"> &mdash; L-systems &mdash;</h1>
+    <div id="return"><a href="../index.html#tile4">wait, take me back</a></div>
+    <div id="flexContainer">
+        <div id="sketch"></div>
+        <div id="inputs">
+
+            <div id="angle_input"><label id="angle_label"> ANGLE </label><br></div>
+
+            <div id="iterations_input"><label id="iterations_label"> ITERATIONS </label><br></div>
+
+            <div id="axiom_input"><label id="axiom_label"> AXIOM </label><br></div>
+
+            <div id="rules_header" <span>RULES</span></div>
+            <div id="rules">
+                <div id="rules_part_A"></div>
+                <div id="arrows"><span>&#x21E2;</span></div>
+                <div id="rules_part_B"></div>
+                <div id="add_rule"></div>
+            </div>
+
+            <div id="slider">
+                <p id="initial_length_label"> INITIAL LENGTH: <span id="inital_length_value"></span></p>
+            </div>
+            <div id="sys_config"></div>
+            <span id="presets">PRESETS <span class="i">(for your convenience)</span><br></span>
+            <div id="drop-down-menus">
+                <div class="select-wrapper" id="menu1"></div>
+                <div class="select-wrapper" id="menu2"></div>
+                <div class="select-wrapper" id="menu3"></div>
+            </div>
+        </div>
+    </div>
+    <h2 id="scroll">you'll want to see this</h2>
+    <div class="flex-container2">
+
+        <div data-aos="fade-right" id="fade_right">
+            <h2 id="work"> it's all in the details</h2>
+            <p> L-systems are cool, it's as simple as that. Drawing (and animating them STEP BY STEP) is a little bit more complex however.
+                L-systems are rendered using a turtle graphics system (weird name, I'll explain). Imagine you're a turtle, and you're reading a set of instructions like "go straight ten feet, turn left, go straight another ten feet, turn right..."
+                you get the idea. But, on top of aimlessly following these weird directions, you also have a giant marker (pretend it can draw on the earth's surface). So, as you're moving along, you're dragging your marker, leaving a trail behind
+                (unless you're specifically told <em> not </em> to drag your marker, then you just move). That is what a turtle graphics system is, except we simulate it with a computer. </p>
+
+            <p> Now that I've explained turtle graphics to you, I can explain L-systems. L-systems (short for Lindenmayer systems) were originally developed for modeling plants, but they have other uses too. In L-systems we begin with an initial
+                rule, the axiom, and we give the system a set of rules. These rules say, "okay, when you see an <q>F</q>, replace it with <q> F[+F]F[-F]F </q> for example, and you can have more than one rule. In instances where we use letters that
+                are not in our defined grammar, they are simply kept in the string (their sole use is just for string replacement patterns). We then give it a number of iterations to perform (or we step through it one iteration at a time), and each
+                iteration it goes through and does the replacements. The string grows quickly, and looks like a ton of gibberish, but it ultimately creates the instructions for our little turtle that draws a cool looking plant or some geometric
+                figure.</p>
+            <p>Some things to note about this simulator: the starting point for the L-system will be at the bottom center of the canvas, unless you're drawing a geometric system or a FASS system (for those I had to figure out the beginning
+                coordinates and inital line length through pure trial and error, so you're welcome). If you're entering your own L-system, keep in mind where it begins (maybe some day I'll come back and add the feature to choose your beginning point,
+                but for now that's not happening, sorry). </p>
+            <p> Oh, and by the way, FASS stands for space-filling, self-avoiding, simple, self-similar, if you were wondering.</p>
+
+            <p id="sidenote"> In case you really care, I was created with p5.js</p>
+        </div>
+        <img src="lsys_info-01.png">
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+<script src="lsys.js"></script>
+
+</html>
